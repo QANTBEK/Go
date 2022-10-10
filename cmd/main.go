@@ -39,7 +39,7 @@ func main() {
 	handlers := handler.NewHandler(services)
 
 	srv := new(goapp.Server)
-	if err := srv.Run(viper.GetString("80"), handlers.InitRoutes()); err != nil {
+	if err := srv.Run(viper.GetString("port"), handlers.InitRoutes()); err != nil {
 		log.Fatalf("error ocured while running http server: %s", err.Error())
 	}
 }
